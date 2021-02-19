@@ -1,0 +1,29 @@
+{
+    "name": "yan9/orderforys",
+    "description": "Laravel package",
+    "license": "MIT",
+    "type": "library",
+    "require": {
+        "php": ">=7.0",
+        "guzzlehttp/guzzle": "~6.0"
+    },
+    "authors": [
+        {
+            "name": "young.zheng",
+            "email": "youngyzheng@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Yan9\\Orderforys\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Yan9\\Orderforys\\OrderforysServiceProvider"
+            ]
+        }
+    },
+    "minimum-stability": "dev"
+}
