@@ -1,20 +1,18 @@
 <?php
 
-namespace Yan9\Orderforys\Controllers;
+namespace Yan9\Orderforys\Cores;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use Yan9\Orderforys\Cores\SignService;
-use Yan9\Orderforys\Cores\ToolUtil;
-use Yan9\Orderforys\Cores\YouShuHttpUtil;
-use Yan9\Orderforys\Cores\YsConfig;
+
+use Yan9\Orderforys\Utils\ToolUtil;
+use Yan9\Orderforys\Utils\YouShuHttpUtil;
+use Yan9\Orderforys\Utils\YsConfig;
 
 /**
  * 数据仓库处理类
- * Class DataSourceController
- * @package Yan9\Orderforys\Controllers
+ * Class DataSource
+ * @package Yan9\Orderforys\Cores
  */
-class DataSourceController extends Controller
+class DataSource
 {
     const URL_ADD_DATA_SOURCE = 'data_source_add';//添加数据仓库
 

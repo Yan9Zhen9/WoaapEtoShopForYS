@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Yan9\Orderforys\Cores;
+namespace Yan9\Orderforys\Utils;
 
 
 class YsConfig
@@ -9,6 +9,9 @@ class YsConfig
     private $appId;
     private $appSecret;
     private $merchantId;
+    private $crmUri;
+    private $miniAppid;
+    private $miniAppkey;
 
     public function __construct()
     {

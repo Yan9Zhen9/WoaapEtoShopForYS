@@ -4,9 +4,9 @@
 namespace Yan9\Orderforys;
 
 
-use Yan9\Orderforys\Controllers\AddVisitPageController;
-use Yan9\Orderforys\Controllers\DataSourceController;
-use Yan9\Orderforys\Controllers\OrderAddController;
+use Yan9\Orderforys\Cores\AddVisitPage;
+use Yan9\Orderforys\Cores\DataSource;
+use Yan9\Orderforys\Cores\OrderAdd;
 
 class YsClient
 {
@@ -16,24 +16,24 @@ class YsClient
 
     public function __construct()
     {
-        $this->addVisitPage = new AddVisitPageController();
-        $this->dataSource   = new DataSourceController();
-        $this->orderAdd     = new OrderAddController();
+        $this->addVisitPage = new AddVisitPage();
+        $this->dataSource   = new DataSource();
+        $this->orderAdd     = new OrderAdd();
     }
 
     /**
      * Action:添加订单
-     * @param $order_info //订单信息
-     * @param $node //时间节点
+     * @param $orderInfo //订单信息
+     * @param $node //事件节点
      * @param $dataSourceId //数据仓库ID
      * @param $type //类型
      * @return array|bool|mixed
      *
      * Date: 2021/3/1
      */
-    public function addOrder($order_info, $node, $dataSourceId, $type = 0)
+    public function addOrder($orderInfo, $node, $dataSourceId, $type = 0)
     {
-        return $this->orderAdd->add($order_info, $node, $dataSourceId, $type);
+        return $this->orderAdd->add($orderInfo, $node, $dataSourceId, $type);
     }
 
     /**

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Yan9\Orderforys\Cores;
+namespace Yan9\Orderforys\Utils;
 
 
 use GuzzleHttp\Client;

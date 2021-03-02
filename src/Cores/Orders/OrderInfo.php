@@ -1,6 +1,6 @@
 <?php
 
-namespace Yan9\Orderforys\Controllers\Orders;
+namespace Yan9\Orderforys\Cores\Orders;
 
 class OrderInfo
 {

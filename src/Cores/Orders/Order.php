@@ -1,15 +1,15 @@
 <?php
 
-namespace Yan9\Orderforys\Controllers\Orders;
+namespace Yan9\Orderforys\Cores\Orders;
 
 class Order
 {
-    private const CLASS_NAME_DEAFULT =  'Yan9\Orderforys\Controllers\Orders\OrderInfo';
+    private const CLASS_NAME_DEFAULT =  'Yan9\Orderforys\Cores\Orders\OrderInfo';
     private $className;
 
     public function __construct($version = 0)
     {
-        $this->className = $version == 0 ? self::CLASS_NAME_DEAFULT : self::CLASS_NAME_DEAFULT . $version;
+        $this->className = $version == 0 ? self::CLASS_NAME_DEFAULT : self::CLASS_NAME_DEFAULT . $version;
     }
 
     public function __call($name, $arguments)

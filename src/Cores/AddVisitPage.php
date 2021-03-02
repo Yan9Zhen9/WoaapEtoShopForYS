@@ -1,20 +1,17 @@
 <?php
 
-namespace Yan9\Orderforys\Controllers;
+namespace Yan9\Orderforys\Cores;
 
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use Yan9\Orderforys\Cores\ToolUtil;
-use Yan9\Orderforys\Cores\YouShuHttpUtil;
-use Yan9\Orderforys\Cores\YsConfig;
-use Yan9\Orderforys\Cores\CrmService;
+use Yan9\Orderforys\Utils\ToolUtil;
+use Yan9\Orderforys\Utils\YouShuHttpUtil;
+use Yan9\Orderforys\Utils\YsConfig;
 
 /**
  * 微信上报处理
- * Class AddVisitPageController
- * @package Yan9\Orderforys\Controllers
+ * Class AddVisitPage
+ * @package Yan9\Orderforys\Cores
  */
-class AddVisitPageController extends Controller
+class AddVisitPage
 {
     const URL_ADD_WXAPP_VISIT_PAGE = 'add_wxapp_visit_page';
 

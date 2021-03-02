@@ -23,6 +23,7 @@ $url_list = [
 
 return [
     'ys_domain'   => $ys_domain,
+    'url_list'    => $url_list,
     'app_id'      => env('YS_APP_ID'),
     'app_secret'  => env('YS_APP_SECRET'),
     'merchant_id' => env('YS_MERCHANT_ID'),
