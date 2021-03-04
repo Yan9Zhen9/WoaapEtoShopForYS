@@ -9,9 +9,6 @@ class YsConfig
     private $appId;
     private $appSecret;
     private $merchantId;
-    private $crmUri;
-    private $miniAppid;
-    private $miniAppkey;
 
     public function __construct()
     {
