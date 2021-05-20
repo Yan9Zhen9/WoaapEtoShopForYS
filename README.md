@@ -136,6 +136,99 @@ $ys->addVisitPage($rawMsg,$dataSourceType);
 }
 ~~~
 
+5> 汇总订单
+~~~
+
+$ys = new YsClient(); //实例化
+
+/**
+     * Action:汇总订单
+     * @param $orderSum =[  //订单列表 数组最大长度 50
+     *   [
+     *    "ref_date"              => '日期，unix时间戳，字段长度为13字节',
+     *    "give_order_amount_sum" => '该日期的下单金额之和',
+     *    "give_order_num_sum"    => '该日期的下单数量之和',
+     *    "payment_amount_sum"    => '该日期的支付金额之和',
+     *    "payed_num_sum"         => '该日期的支付数量之和',
+     *   ],
+     * ]
+     * @param $dataSourceId //数据仓库ID
+     * @return array|bool|mixed
+     */
+$ys->addOrderSum($orderSum, $dataSourceId);
+
+~~~
+~~~
+应答示例:
+{
+  "retcode":0,
+  "errmsg":"",
+  "data": {}
+}
+~~~
+
+6> 添加数据仓库（新版本）
+~~~
+
+$ys = new YsClient(); //实例化
+
+/**
+ * Action:添加数据仓库(新版本,取消仓库类型)
+ * @return array|bool|mixed
+ */
+$ys->addNewDataSource();
+
+~~~
+~~~
+应答示例:
+{
+    "retcode": 0,
+    "errmsg": "",
+    "data": {
+        "dataSource": {
+            "id": "147",
+            "merchantId": "1"
+        }
+    }
+}
+~~~
+
+
+7> 获取数据仓库（新版本）
+~~~
+
+$ys = new YsClient(); //实例化
+
+/**
+ * Action:获取数据仓库(新版本,取消仓库类型)
+ * @return array|bool|mixed 
+ */
+$ys->getNewDataSource();
+
+~~~
+~~~
+应答示例:
+{
+    "retcode": 0,
+    "errmsg": "",
+    "data": {
+        "dataSources": [
+            {
+                "id": "147",  // dataSourceId
+                "type": 0,  // 接口类型，自2021年4月29日后返回的 DataSourceId 不再有 type 值。
+                "merchantId": "1"  // 商家 ID
+            },
+            {
+                "id": "17",
+                "merchantId": "1"
+            }
+        ]
+    }
+}
+~~~
+
+
+
 - 应答体字段
 
 |  参数名  |   类型   |  描述  |

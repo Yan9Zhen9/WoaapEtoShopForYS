@@ -4,6 +4,7 @@
 namespace Yan9\Orderforys;
 
 
+use Yan9\Orderforys\Cores\AddOrderSum;
 use Yan9\Orderforys\Cores\AddVisitPage;
 use Yan9\Orderforys\Cores\DataSource;
 use Yan9\Orderforys\Cores\OrderAdd;
@@ -13,12 +14,14 @@ class YsClient
     private $addVisitPage;
     private $dataSource;
     private $orderAdd;
+    private $addOrderSum;
 
     public function __construct()
     {
         $this->addVisitPage = new AddVisitPage();
         $this->dataSource   = new DataSource();
         $this->orderAdd     = new OrderAdd();
+        $this->addOrderSum  = new AddOrderSum();
     }
 
     /**
@@ -71,5 +74,48 @@ class YsClient
     public function getDataSource($dataSourceType)
     {
         return $this->dataSource->getDataSource($dataSourceType);
+    }
+
+    /**
+     * Action:汇总订单
+     * @param $orderSum = [  //订单列表 数组最大长度 50
+     *   [
+     *    "ref_date"              => '日期，unix时间戳，字段长度为13字节',
+     *    "give_order_amount_sum" => '该日期的下单金额之和',
+     *    "give_order_num_sum"    => '该日期的下单数量之和',
+     *    "payment_amount_sum"    => '该日期的支付金额之和',
+     *    "payed_num_sum"         => '该日期的支付数量之和',
+     *   ],
+     * ]
+     * @param $dataSourceId //数据仓库ID
+     * @return array|bool|mixed
+     *
+     * Date: 2021/5/11
+     */
+    public function addOrderSum($orderSum, $dataSourceId)
+    {
+        return $this->addOrderSum->addOrderSum($orderSum, $dataSourceId);
+    }
+
+    /**
+     * Action:添加数据仓库(新版本,取消仓库类型)
+     * @return array|bool|mixed
+     *
+     * Date: 2021/5/11
+     */
+    public function addNewDataSource()
+    {
+        return $this->dataSource->addNewDataSource();
+    }
+
+    /**
+     * Action:获取数据仓库(新版本,取消仓库类型)
+     * @return array|bool|mixed
+     *
+     * Date: 2021/5/11
+     */
+    public function getNewDataSource()
+    {
+        return $this->dataSource->getNewDataSource();
     }
 }

@@ -4,7 +4,7 @@ namespace Yan9\Orderforys\Cores\Orders;
 
 class Order
 {
-    private const CLASS_NAME_DEFAULT =  'Yan9\Orderforys\Cores\Orders\OrderInfo';
+    const CLASS_NAME_DEFAULT =  'Yan9\Orderforys\Cores\Orders\OrderInfo';
     private $className;
 
     public function __construct($version = 0)
